@@ -26,5 +26,9 @@ public class SumTwoNumbersTests {
     Integer anotherResult = SumTwoNumbers.sum(2, null);
     assertNotNull(anotherResult, "The result cannot be null");
     assertEquals(2, anotherResult);
+    Integer finalResult = SumTwoNumbers.sum(null, null);
+    assertNotNull(finalResult, "The result cannot be null");
+    assertEquals(0, finalResult);
   }
+
 }

@@ -39,4 +39,27 @@ public class CompareNumbersTests {
     assertNotNull(result, "The result cannot be null");
     assertEquals(2, result);
   }
+  @Test
+  @DisplayName("Test when two null values are sent")
+  public void testTwoNullValues() {
+    Integer result = CompareNumbers.max(null, 2, null);
+    assertNotNull(result, "The result cannot be null");
+    assertEquals(2, result);
+
+    Integer anotherResult = CompareNumbers.max(2, null, null);
+    assertNotNull(anotherResult, "The result cannot be null");
+    assertEquals(2, anotherResult);
+
+    Integer finalResult = CompareNumbers.max(null, null, 2);
+    assertNotNull(finalResult, "The result cannot be null");
+    assertEquals(2, finalResult);
+  }
+
+  @Test
+  @DisplayName("Test when three null values are sent")
+  public void testThreeNullValues() {
+    Integer result = CompareNumbers.max(null, null, null);
+    assertNotNull(result, "The result cannot be null");
+    assertEquals(0, result);
+  }
 }
